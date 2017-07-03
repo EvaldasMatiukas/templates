@@ -11,8 +11,11 @@
 		<div=class="col-md-12"><h1>Header</div>
 	</div>
 		<div=class="row">
-		<div=class="col-md-12"><h1>Content</div>
-				<div=class="col-md-4"><?php include "inc/footer.php"; ?></div>
+		<div=class="col-md-12"><h1><?=$content; ?></div>
+				<div=class="col-md-4"><?php 
+				include "template_selector.php"; </div>
+				include "inc/username.php"; 
+				?></div>
 
 		</div>
 	<div=class="row">

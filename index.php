@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $title = "Evaldo puslapis";
 $content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper enim dui, in rhoncus nisl pellentesque eget. Aliquam erat volutpat. Sed elementum velit mi, a congue nisi varius vel. In hac habitasse platea dictumst. Cras mollis orci ac magna congue feugiat. Fusce in convallis sapien. In hac habitasse platea dictumst. Duis et tincidunt odio, et vestibulum leo.
 
@@ -7,11 +9,19 @@ Integer rutrum orci ullamcorper nulla vulputate, quis consequat leo laoreet. Cur
 
 $templates = ["green", "orange", "pink"];
 
-$template_name = $_GET['t'];
+if (isset($_GET['username'])) {
+	$title = "Cia lankosi" . $_GET['username'];
+	$_SESSION['user'] = $_GET['username'];
+} elseif = "Cia lankosi" . $_SESSION['user'];
+
+}
+if (isset($_GET['t'])) {
+	$template_name = $_GET['t'];
+	$_SESSION['session_template'] = $_GET['t'];
+		} else if (isset($_SESSION['session_template'])) {
+			$template_name = $_SESSION['session_template'];
+	} else {
+	$template_name = $templates[0];
+	}
 
 include 'templates/' .$template_name.'.php';
-
-//include "templates/orange.php";
-//include "templates/green.php";
-//include "templates/pink.php";
-?>
