@@ -10,11 +10,12 @@ Integer rutrum orci ullamcorper nulla vulputate, quis consequat leo laoreet. Cur
 $templates = ["green", "orange", "pink"];
 
 if (isset($_GET['username'])) {
-	$title = "Cia lankosi" . $_GET['username'];
+	$title = "Cia lankosi " . $_GET['username'];
 	$_SESSION['user'] = $_GET['username'];
-} elseif = "Cia lankosi" . $_SESSION['user'];
-
+} elseif (isset($_SESSION['user'])){
+	$title = "Cia lankosi " . $_SESSION['user'];
 }
+
 if (isset($_GET['t'])) {
 	$template_name = $_GET['t'];
 	$_SESSION['session_template'] = $_GET['t'];
@@ -23,5 +24,4 @@ if (isset($_GET['t'])) {
 	} else {
 	$template_name = $templates[0];
 	}
-
-include 'templates/' .$template_name.'.php';
+include $template_name .'.php';?>

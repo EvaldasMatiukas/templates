@@ -14,9 +14,8 @@
 		<div=class="col-md-12"><h1><?=$content; ?></div>
 				<div=class="col-md-4">
 				<?php 
-				include "template_selector.php"; ?></div>
-				include "inc/username.php";
-		</div>
+				include "template_selector.php";
+				include "username.php";?></div>
 	<div=class="row">
 		<div=class="col-md-12"><?php include "inc/footer.php"; ?></div>
 		</div>
