@@ -11,6 +11,30 @@
         array_push($_SESSION['messages'], $msg);
     }
  
+
+// Create connection
+$conn = mysqli_connect("localhost", "EvaldasM", "AciuUzDarba777", "evaldasm");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+    $sgl = "SELECT * FROM messeges";
+    $result = mysql_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+    while($row= mysqli_fetch_assoc($result)) {
+        print_r($row);
+    }
+   } else {
+}
+echo "0 result";
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
